@@ -21,9 +21,7 @@ public class MovieInfoService {
 
     @RequestMapping("/{movieId}")
     public Movie getMovieInfo(@PathVariable("movieId") String movieId){
-        System.err.println("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" + apiKey);
         ExternalMovieDBWrapper externalMovieDBWrapper=restTemplate.getForObject("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" +  apiKey, ExternalMovieDBWrapper.class);
-        System.err.println(externalMovieDBWrapper.getId() + " " + externalMovieDBWrapper.getTitle() + " " + externalMovieDBWrapper.getOverview());
         return new Movie(externalMovieDBWrapper.getId(), externalMovieDBWrapper.getTitle(),
                 externalMovieDBWrapper.getOverview());
         //        return new Movie(id,"SpiderMan: No Way Home");
