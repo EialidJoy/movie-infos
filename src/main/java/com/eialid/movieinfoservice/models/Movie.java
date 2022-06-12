@@ -1,27 +1,37 @@
 package com.eialid.movieinfoservice.models;
 
 public class Movie {
-    private int movieId;
+    private String movieId;
     private String name;
+    private String overview;
 
-    public Movie(int movieId, String name) {
+    public Movie(String movieId, String name, String overview) {
         this.movieId = movieId;
         this.name = name;
+        this.overview = overview;
     }
 
-    public void setMovieId(int movieId) {
+    public String getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(String movieId) {
         this.movieId = movieId;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public int getMovieId() {
-        return movieId;
+    public String getOverview() {
+        return overview;
     }
 
-    public String getName() {
-        return name;
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
 }
